@@ -17,6 +17,9 @@
   * 1 white 4 pin LED
   * 1 white 4 pin LED on Chip
   * 1 DED, dark emitting diode, infrared emitter
+* jumper wires
+* jumper wires male/female
+* jumper wire pin header "Stiftleiste" for jumper wires
 
 ## Switches
 

@@ -1,11 +1,5 @@
 #include <Arduino.h>
-
-// Pins definieren
-const int redPin = 13;
-const int yellowPin = 12;
-const int bluePin = 11;
-const int soundPin = 0;
-const int analogPin = A0;
+#include "constants.h"
 
 // Aktueller Status, boolean kann nur false/0 oder true/1 sein
 // d.h. "not 0" = 1 und "not 1" = 0

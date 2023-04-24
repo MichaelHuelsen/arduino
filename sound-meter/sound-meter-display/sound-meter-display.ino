@@ -1,5 +1,9 @@
 #include <Arduino.h>
-#include "constants.h"
+const int redPin = 13;
+const int yellowPin = 12;
+const int bluePin = 11;
+const int soundPin = 0;
+const int analogPin = A0;
 
 // Aktueller Status, boolean kann nur false/0 oder true/1 sein
 // d.h. "not 0" = 1 und "not 1" = 0
@@ -91,7 +95,7 @@ void writeLedStatus()
     {
         counter = 0;
     }
-    // displayDigit(counter);
+    displayDigit(counter);
 }
 
 void testDisplay()
@@ -221,13 +225,12 @@ void loop()
     if (!din)
     {
         switchLed();
-        showSensitivity(sensorValue);
+        // showSensitivity(sensorValue);
 
-        /*
+        /**/
         redLedStatus = !redLedStatus;
         digitalWrite(redPin, !redLedStatus);
         digitalWrite(yellowPin, redLedStatus);
-        */
         delay(pauseDelay);
     }
 

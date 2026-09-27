@@ -5,9 +5,10 @@
 Led led(LED_PIN);
 
 void setup() {
+  Serial.begin(SERIAL_BAUD);
+  Serial.println("Program started");
   pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(7, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 
   led.begin();
 }
@@ -20,10 +21,12 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);
   delay(900);
 
-  digitalWrite(8, HIGH);
+  Serial.println("D8 ON");
+  digitalWrite(LED_PIN, HIGH);
   delay(1000);
 
-  digitalWrite(8, LOW);
+  Serial.println("D8 OFF");
+  digitalWrite(LED_PIN, LOW);
   delay(1000);
 
   /*

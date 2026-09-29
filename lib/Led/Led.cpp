@@ -23,3 +23,7 @@ void Led::toggle() {
   else
     on();
 }
+
+void initLedOutput(int pin) { pinMode(pin, OUTPUT); }
+
+void initLedInput(int pin) { pinMode(pin, INPUT); }

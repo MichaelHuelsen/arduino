@@ -1,41 +1,31 @@
+#include "simple_led/setup_led.h"
 #include <Arduino.h>
 #include <HardwareSerial.h>
-#include <Led.h>
 #include <config.h>
 
-Led led(LED_PIN);
+// Select which setup to run by uncommenting one:
+#define ACTIVE_SETUP_LED
+// #define ACTIVE_SETUP_EXAMPLE2
 
 void setup() {
   Serial.begin(SERIAL_BAUD);
   Serial.println("Program started");
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
 
-  led.begin();
+#ifdef ACTIVE_SETUP_LED
+  setup_led_init();
+#endif
+
+  // #ifdef ACTIVE_SETUP_EXAMPLE2
+  // setup_example2_init();
+  // #endif
 }
+
 void loop() {
-  // START PROGRAM
-  //  // Pulse built-in LED briefly
+#ifdef ACTIVE_SETUP_LED
+  setup_led_loop();
+#endif
 
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(900);
-
-  Serial.println("D8 ON");
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-
-  Serial.println("D8 OFF");
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
-
-  // END OF PROGRAM// Pulse built-in LED briefly again
-  for (int i = 0; i < 3; i++) {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(100);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(100);
-  }
-  delay(900);
+  // #ifdef ACTIVE_SETUP_EXAMPLE2
+  // setup_example2_loop();
+  // #endif
 }

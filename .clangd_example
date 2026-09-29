@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://json.schemastore.org/clangd.json
+
+CompileFlags:
+  CompilationDatabase: .
+  Compiler: /Users/USERNAME/.platformio/packages/toolchain-atmelavr/bin/avr-g++
+  Add:
+    - "--target=avr"
+    - "-I/Users/USERNAME/.platformio/packages/toolchain-atmelavr/avr/include"
+    - "-I/Users/USERNAME/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/7.3.0/include"
+    - "-I/Users/USERNAME/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/7.3.0/include-fixed"
+    - "-I/Users/USERNAME/Development/arduino/lib/Led"
+
+Diagnostics:
+  MissingIncludes: None
+  UnusedIncludes: Strict

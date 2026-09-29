@@ -1,6 +1,7 @@
-#include "config.h"
 #include <Arduino.h>
+#include <HardwareSerial.h>
 #include <Led.h>
+#include <config.h>
 
 Led led(LED_PIN);
 
@@ -28,13 +29,6 @@ void loop() {
   Serial.println("D8 OFF");
   digitalWrite(LED_PIN, LOW);
   delay(1000);
-
-  /*
-  led.on();
-  delay(1000);
-
-  led.off();
-  delay(1000);*/
 
   // END OF PROGRAM// Pulse built-in LED briefly again
   for (int i = 0; i < 3; i++) {

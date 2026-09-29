@@ -1,10 +1,12 @@
-#include "simple_led/setup_led.h"
+// #include "simple_led/setup_led.h"
+#include "sound_meter/setup_sound_meter.h"
 #include <Arduino.h>
 #include <HardwareSerial.h>
 #include <config.h>
 
 // Select which setup to run by uncommenting one:
-#define ACTIVE_SETUP_LED
+// #define ACTIVE_SETUP_LED
+#define ACTIVE_SETUP_SOUND_METER
 // #define ACTIVE_SETUP_EXAMPLE2
 
 void setup() {
@@ -15,6 +17,10 @@ void setup() {
   setup_led_init();
 #endif
 
+#ifdef ACTIVE_SETUP_SOUND_METER
+  setup_sound_meter_init();
+#endif
+
   // #ifdef ACTIVE_SETUP_EXAMPLE2
   // setup_example2_init();
   // #endif
@@ -23,6 +29,10 @@ void setup() {
 void loop() {
 #ifdef ACTIVE_SETUP_LED
   setup_led_loop();
+#endif
+
+#ifdef ACTIVE_SETUP_SOUND_METER
+  setup_sound_meter_loop();
 #endif
 
   // #ifdef ACTIVE_SETUP_EXAMPLE2

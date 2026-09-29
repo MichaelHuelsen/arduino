@@ -1,4 +1,2 @@
-void initBasics()
-{
-    Serial.begin(9600);
-}
+#include "HardwareSerial.h"
+void initBasics() { Serial.begin(9600); }
